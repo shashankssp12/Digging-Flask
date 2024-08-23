@@ -7,6 +7,7 @@
 - ❌Deploy to Heroku
 
 # Creating the database: 
+## Method 1:
 - This is the place the app is going to locate the database: 
  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' 
 - db = SQLALCHEMY(app)
@@ -14,6 +15,12 @@
 - with app.app_context():
 - type:(give identation) db.create_all()
 - exit()
+## Method 2: 
+- Create file: *create_db.py* 
+- Enter code: 
+    - `from app4api import db,app`
+    - `with app.app_context():`
+    - `db.create_all()`  
 
 
 # Concepts Used: 
@@ -35,3 +42,7 @@
 - vercel
 - render
 - fly.io
+
+# Learnt shortcuts: 
+- shift + alt + downarrow: Copies full line below
+- alt + z : to refactor the current line of code
