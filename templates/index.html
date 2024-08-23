@@ -29,6 +29,10 @@
                 <input type="submit" value="Add">
             </form>
         </div>
+        {% if tasks_info|length < 1 %}
+            <h1>No tasks added yet, create first one below!</h1>
+        {% else %}
+        
         
         <table border="1px" style="background-color: pink;" >
             <tr>
@@ -41,14 +45,14 @@
                 <td>{{task.content}}</td>
                 <td>{{task.date_created.date()}}</td>
                 <td>
-                    <a href="/edit">Edit</a>
+                    <a href="/edit/{{task.id}}">Edit</a>
                     <br>
-                    <a href="/delete">Delete</a>
+                    <a href="/delete/{{task.id}}">Delete</a>
                 </td>
             </tr>
             {% endfor %}
         </table>
-
+        {% endif %}
 
     </div>
 
