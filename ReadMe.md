@@ -10,8 +10,9 @@ Plan :
 - This is the place the app is going to locate the database: 
  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' 
 - db = SQLALCHEMY(app)
-- in python shell type: from app import db
-- type: db.create_all()
+- in python shell type: from app import db,app 
+- with app.app_context():
+- type:(give identation) db.create_all()
 - exit()
 
 

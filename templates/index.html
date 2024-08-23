@@ -1,20 +1,57 @@
 {% extends 'base.html' %}
 
 
-{% block title %}Home{% endblock %}
+{% block title %}Task Master{% endblock %}
 
 {% block head %}
     <style>
         .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             margin-top: 20px;
+        .form{
+            margin-bottom: 20px;
+            background-color: salmon;
+        }
         }
     </style>
 {% endblock %}
 
 {% block body %}
     <div class="content">
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the home page content</p>
+        <h1>Task Master</h1>
+        <b><p>Maintain your daily tasks here:</p></b>
+        <div class="form">
+            <form action="/" method="POST">
+                <input type="text"  id="task_input" name="task_input" placeholder="Enter your task here" required>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        
+        <table border="1px" style="background-color: pink;" >
+            <tr>
+                <th>Task</th>
+                <th>Added</th>
+                <th>Actions</th>
+            </tr>
+            {% for task in tasks_info %}
+            <tr>
+                <td>{{task.content}}</td>
+                <td>{{task.date_created.date()}}</td>
+                <td>
+                    <a href="/edit">Edit</a>
+                    <br>
+                    <a href="/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
     </div>
+
+
+
 {% endblock %}
