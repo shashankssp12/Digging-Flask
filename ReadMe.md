@@ -25,6 +25,7 @@
 
 # Concepts Used: 
 - template inheritance
+- serialized json (with the use of marshal_with we can send json back)
 
 
 # Heroku Deployment
@@ -46,3 +47,6 @@
 # Learnt shortcuts: 
 - shift + alt + downarrow: Copies full line below
 - alt + z : to refactor the current line of code
+
+
+[Video Ref link for Creating RESTAPI](https://youtu.be/z3YMz-Gocmw?feature=shared)
